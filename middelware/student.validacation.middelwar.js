@@ -60,6 +60,26 @@ let InsertInstiuteApi= ()=>
    
 
 }
+let InsertcouresApi= ()=>
+{
+    
+    return[body('Course_Name')
+    .isLength({min:2,Max:20}).withMessage('Name length only 20 Character')
+    .trim().isAlpha().withMessage('Entry only Alphabets(A-Z,a-z')
+    .notEmpty(),
+
+    body('Coures_Mode')
+    .isLength({min:2,Max:20}).withMessage('Name length only 20 Character')
+    .trim().isAlpha().withMessage('Entry only Alphabets(A-Z,a-z')
+    .notEmpty(),
+
+    body('Coures_Duration')
+    .notEmpty().withMessage('Age is required')
+    .isNumeric().withMessage('Enter only number'),
+
+]
+}
 module.exports={Insert:Insert,
 InsertlocationApi:InsertlocationApi,
-InsertInstiuteApi:InsertInstiuteApi};
+InsertInstiuteApi:InsertInstiuteApi,
+InsertcouresApi:InsertcouresApi};

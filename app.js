@@ -10,6 +10,7 @@ let authRouter= require('./routes/auth.routes');
 let  checktoken= require('./middelware/checktoken.middelware')
 let locationRouter =require('./routes/location.routes')
 let InstituteRouter=require('./routes/Instiute.routes ')
+let couresRouter=require('./routes/coures.routes ')
 var app = express();
 
 app.use(logger('dev'));
@@ -24,6 +25,7 @@ app.use('/', indexRouter);
 app.use('/student',studentRouter);
 app.use('/location',locationRouter);
 app.use('/institute',InstituteRouter);
+app.use('/coures',couresRouter)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
